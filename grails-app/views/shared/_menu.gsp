@@ -29,6 +29,7 @@
                 <g:link controller="anio" action="index">
                     <span class="icon"><i class="icon20 i-cart-5"></i></span>
                     <span class="txt">Contabilidad</span>
+                </g:link>
                 </a>
             </li>
         </ul>
