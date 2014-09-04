@@ -18,17 +18,17 @@
         </ul>
         <ul class="nav nav-list">
             <li>
-                <g:link controller="movimiento" action="index">
+                <g:link controller="contribuyente" action="index">
                     <span class="icon"><i class="icon20 i-coins"></i></span>
-                    <span class="txt">Entrada</span>
+                    <span class="txt">Contribuyentes</span>
                 </g:link>
             </li>
         </ul>
         <ul class="nav nav-list">
             <li>
-                <a href="#create-configuracionEmpresa">
+                <g:link controller="anio" action="index">
                     <span class="icon"><i class="icon20 i-cart-5"></i></span>
-                    <span class="txt">Salida</span>
+                    <span class="txt">Contabilidad</span>
                 </a>
             </li>
         </ul>
