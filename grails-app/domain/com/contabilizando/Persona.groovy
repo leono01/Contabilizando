@@ -1,7 +1,8 @@
 package com.contabilizando
 
-//import com.app.catalogos.Estado
-//import com.app.catalogos.Pais
+import com.contabilizando.catalogos.Municipio
+import com.contabilizando.catalogos.Estado
+import com.contabilizando.catalogos.Pais
 
 class Persona {
     String rfc
@@ -9,24 +10,33 @@ class Persona {
     String numeroExteriorFiscal
     String numeroInteriorFiscal
     String coloniaFiscal
-    String delegacionOMunicipioFiscal
-    //Estado estadoFiscal
-    //Pais   paisFiscal
+    String localidadFiscal
+    Municipio delegacionOMunicipioFiscal
+    Estado estadoFiscal
+    Pais   paisFiscal
     String codigoPostalFiscal
     String telefono
     String email
+    String regimenFiscal
+    
     static constraints = {
-        rfc                         size: 1..13
-        calleFiscal                 blank:false
-        numeroExteriorFiscal        blank:false
-        numeroInteriorFiscal        blank:false
-        coloniaFiscal               blank:false
-        delegacionOMunicipioFiscal  blank:false
-        coloniaFiscal               blank:false
-        //estadoFiscal                blank:false
-        //paisFiscal                  blank:false
-        codigoPostalFiscal          blank:false
-        telefono                    blank:false
-        email                       email:true
+        rfc                         size: 1..13, nullable:false
+        calleFiscal                 blank:true, nullable:true
+        numeroExteriorFiscal        blank:true, nullable:true
+        numeroInteriorFiscal        blank:true, nullable:true
+        coloniaFiscal               blank:true, nullable:true
+        localidadFiscal             blank:true, nullable:true
+        delegacionOMunicipioFiscal  blank:true, nullable:true
+        coloniaFiscal               blank:true, nullable:true
+        estadoFiscal                blank:true, nullable:true
+        paisFiscal                  blank:true, nullable:true
+        codigoPostalFiscal          blank:true, nullable:true
+        telefono                    blank:true, nullable:true
+        email                       email:true, nullable:true
+        regimenFiscal               blank:true, nullable:true
+    }
+    
+    static mapping = {
+        id generator: 'increment'
     }
 }

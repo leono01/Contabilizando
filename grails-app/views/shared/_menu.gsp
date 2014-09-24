@@ -18,7 +18,7 @@
         </ul>
         <ul class="nav nav-list">
             <li>
-                <g:link controller="contribuyente" action="index">
+                <g:link controller="persona" action="listado">
                     <span class="icon"><i class="icon20 i-coins"></i></span>
                     <span class="txt">Contribuyentes</span>
                 </g:link>
@@ -26,10 +26,17 @@
         </ul>
         <ul class="nav nav-list">
             <li>
-                <g:link controller="anio" action="index">
-                    <span class="icon"><i class="icon20 i-cart-5"></i></span>
-                    <span class="txt">Contabilidad</span>
+                <g:link controller="movimiento" action="subirArchivoXML">
+                    <span class="icon"><i class="icon20 i-coins"></i></span>
+                    <span class="txt">Entrada</span>
                 </g:link>
+            </li>
+        </ul>
+        <ul class="nav nav-list">
+            <li>
+                <a href="#create-configuracionEmpresa">
+                    <span class="icon"><i class="icon20 i-cart-5"></i></span>
+                    <span class="txt">Salida</span>
                 </a>
             </li>
         </ul>

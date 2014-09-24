@@ -9,7 +9,7 @@ class Categoria implements Serializable{
     }
     
     static mapping = {
-        id generator:'sequence'
+        id generator:'increment'
     }
     
     String toString(){

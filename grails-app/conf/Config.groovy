@@ -1,4 +1,7 @@
-// locations to search for config files that get merged into the main config;
+import org.apache.log4j.*
+import org.apache.log4j.DailyRollingFileAppender
+
+// // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
@@ -122,7 +125,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.contabilizand
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.contabilizando.login.UsuarioRol'
 grails.plugin.springsecurity.authority.className = 'com.contabilizando.login.Rol'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/':                              ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+    
+	'/':                              ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
 	'/index':                         ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
 	'/index.gsp':                     ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
 	'/main.gsp':                      ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
@@ -139,5 +143,12 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/registrationCode/**':           ['ROLE_ADMINISTRADOR'],
         '/securityInfo/**':               ['ROLE_ADMINISTRADOR'],
         '/assets/**':                     ['ROLE_ADMINISTRADOR'],
+        '/movimiento/**':                 ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+        '/persona/**':                    ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+        '/personaFisica/**':              ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+        '/personaMoral/**':               ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+        '/categoria/**':                  ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+        '/tipoDeOperacion/**':            ['ROLE_ADMINISTRADOR','ROLE_CONTADOR']
+        
 ]
 
