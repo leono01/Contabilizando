@@ -45,8 +45,8 @@ class BootStrap {
                 new UsuarioRol (usuario : Usuario.findByUsername("contador"), rol : Rol.findByAuthority("ROLE_CONTADOR")).save()
                 
                 
-                new Categoria (nombreDeCategoria: "Entrada").save()
-                new Categoria (nombreDeCategoria: "Salida").save()
+                new Categoria (nombreDeCategoria: "Ingreso").save()
+                new Categoria (nombreDeCategoria: "Gasto").save()
                 
                 println Categoria.get(1)
                 println Categoria.get(2)

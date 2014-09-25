@@ -21,7 +21,7 @@ class ConfiguracionEmpresa {
     }
     
     static mapping = {
-        id generator: 'sequence'
+        id generator: 'increment'
     }
     
 }

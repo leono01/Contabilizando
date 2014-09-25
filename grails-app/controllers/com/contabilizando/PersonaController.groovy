@@ -101,4 +101,9 @@ class PersonaController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    
+    def listado(){
+        
+    }
+    
 }

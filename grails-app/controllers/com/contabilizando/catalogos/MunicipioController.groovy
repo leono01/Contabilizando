@@ -3,6 +3,7 @@ package com.contabilizando.catalogos
 
 
 import static org.springframework.http.HttpStatus.*
+import grails.converters.JSON
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
@@ -101,4 +102,11 @@ class MunicipioController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    
+    def ajaxGetMunicipios () {
+        def estado = Estado.get(params.id)
+        def municipios = Municipio.findAllByEstado(estado)        
+        render municipios as JSON
+    }
+    
 }

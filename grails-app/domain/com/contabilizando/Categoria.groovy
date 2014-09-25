@@ -8,11 +8,12 @@ class Categoria implements Serializable{
         nombreDeCategoria nullable:true, inList:["Ingreso","Gasto"]
     }
     
-    static mapping = {
-        id generator:'increment'
-    }
-    
     String toString(){
         "${nombreDeCategoria}"
     }
+    
+    static mapping = {
+        id generator : 'increment'
+    }
+    
 }

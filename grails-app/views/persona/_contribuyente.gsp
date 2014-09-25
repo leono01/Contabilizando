@@ -63,7 +63,7 @@
 	</label>
 	<g:select   id="paisFiscal" 
                     name="paisFiscal.id" 
-                    from="${com.app.catalogos.Pais.list()}" 
+                    from="${com.contabilizando.catalogos.Pais.list()}" 
                     optionKey="id" required="" 
                     value="${personaInstance?.paisFiscal?.id}"                     
                     class="many-to-one"/>
@@ -77,7 +77,7 @@
 	</label>
 	<g:select   id="estadoFiscal" 
                     name="estadoFiscal.id" 
-                    from="${com.app.catalogos.Estado.list()}" 
+                    from="${com.contabilizando.catalogos.Estado.list()}" 
                     optionKey="id" required="" 
                     value="${personaInstance?.estadoFiscal?.nombre}"                     
                     onchange="${remoteFunction(
@@ -98,7 +98,7 @@
 	<%--<g:textField name="delegacionOMunicipioFiscal" required="" value="${personaInstance?.delegacionOMunicipioFiscal}"/>--%>
         <g:select   id="delegacionOMunicipioFiscal" 
                     name="delegacionOMunicipioFiscal.id" 
-                    from="${com.app.catalogos.Municipio.list()}" 
+                    from="${com.contabilizando.catalogos.Municipio.list()}" 
                     optionKey="id" required="" 
                     value="${personaInstance?.delegacionOMunicipioFiscal?.nombre}" class="many-to-one"/>
 </div>

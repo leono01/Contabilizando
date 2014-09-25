@@ -1,5 +1,5 @@
 
-<%@ page import="com.app.Persona" %>
+<%@ page import="com.contabilizando.Persona" %>
 <!DOCTYPE html>
 <html>
 	<head>
