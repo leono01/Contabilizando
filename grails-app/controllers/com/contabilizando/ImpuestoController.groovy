@@ -101,4 +101,8 @@ class ImpuestoController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    
+    def impuestoNuevo() { 
+       
+    }
 }

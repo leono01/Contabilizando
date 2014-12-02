@@ -6,6 +6,9 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import com.contabilizando.catalogos.Estado
 import com.contabilizando.catalogos.Pais
+import com.contabilizando.Categoria
+import com.contabilizando.catalogos.ConceptoIngreso
+import com.contabilizando.catalogos.ConceptoGasto
 import org.jdom2.Document
 import org.jdom2.Element
 import org.jdom2.JDOMException
@@ -462,6 +465,72 @@ class MovimientoController {
     def guardarIngreso(){   
         flash.warn = "Se ha guardado el comprobante con éxito."
         render (view:"subirArchivoXML")
-    }       
+    }
     
+    @Transactional
+    def agregarIngreso(){
+        println "Se va a registrar un ingreso"
+        
+        Movimiento unIngreso = new Movimiento(serie:"",folio:"",fechaDeCertificacion:new Date(),lugarDeExpedicion:"",formaDePago:"", metodoDePago:"", numeroDeSerieDeCertificadoDelEmisor:"", folioFiscal:"",
+        numeroDeSerieDeCertificadoDelSat:"", importeNeto:0.0, totalImpuestosTrasladados:0.0, total:0.0, categoria:null, emisor:null, receptor:null,
+        calleExpedicion:"",numeroExteriorExpedicion:"", numeroInteriorExpedicion:"",coloniaExpedicion:"", delegacionOMunicipioExpedicion:"",
+        estadoExpedicion:null, paisExpedicion:null, codigoPostalExpedicion:"").save()
+        
+        [unIngreso:unIngreso]
+        
+    }
+    
+    @Transactional
+    def almacenarIngreso(){
+        println params
+        def elIngreso       = Movimiento.get(params.unIngreso as long)
+        def cliente         = Persona.get(params.cliente as long)
+        def conceptoIngreso = ConceptoIngreso.get(params.conceptoIngreso as long)
+        elIngreso.importeNeto       = params.importe as BigDecimal
+        elIngreso.folio         = params.folio as String
+        elIngreso.categoria     = Categoria.get(1)
+        elIngreso.receptor      = cliente
+       
+        /**serie:"",folio:"",fechaDeCertificacion:new Date(),lugarDeExpedicion:"",formaDePago:"", metodoDePago:"", numeroDeSerieDeCertificadoDelEmisor:"", folioFiscal:"",
+        numeroDeSerieDeCertificadoDelSat:"", importeNeto:0.0, totalImpuestosTrasladados:0.0, total:0.0, categoria:null, emisor:null, receptor:null,
+        calleExpedicion:"",numeroExteriorExpedicion:"", numeroInteriorExpedicion:"",coloniaExpedicion:"", delegacionOMunicipioExpedicion:"",
+        estadoExpedicion:null, paisExpedicion:null, codigoPostalExpedicion:"")**/
+        
+        redirect controller:"contabilidad", action:"listarIngresos"
+    }
+    
+    @Transactional
+    def agregarGasto(){
+        
+        println "Se va a registrar un gasto"
+        
+        Movimiento unGasto = new Movimiento(serie:"",folio:"",fechaDeCertificacion:new Date(),lugarDeExpedicion:"",formaDePago:"", metodoDePago:"", numeroDeSerieDeCertificadoDelEmisor:"", folioFiscal:"",
+        numeroDeSerieDeCertificadoDelSat:"", importeNeto:0.0, totalImpuestosTrasladados:0.0, total:0.0, categoria:null, emisor:null, receptor:null,
+        calleExpedicion:"",numeroExteriorExpedicion:"", numeroInteriorExpedicion:"",coloniaExpedicion:"", delegacionOMunicipioExpedicion:"",
+        estadoExpedicion:null, paisExpedicion:null, codigoPostalExpedicion:"").save()
+        
+        [unGasto:unGasto]
+        
+    }
+    
+    @Transactional
+    def almacenarGasto(){
+        println params
+        println params.unGasto
+        def elGasto       = Movimiento.get(params.unGasto as long)
+        println elGasto
+        def cliente         = Persona.get(params.cliente as long)
+        def conceptoGasto = ConceptoGasto.get(params.conceptoGasto as long)
+        elGasto.importeNeto       = params.importe as BigDecimal
+        elGasto.folio         = params.folio as String
+        elGasto.categoria     = Categoria.get(2)
+        elGasto.emisor      = cliente
+       
+        /**serie:"",folio:"",fechaDeCertificacion:new Date(),lugarDeExpedicion:"",formaDePago:"", metodoDePago:"", numeroDeSerieDeCertificadoDelEmisor:"", folioFiscal:"",
+        numeroDeSerieDeCertificadoDelSat:"", importeNeto:0.0, totalImpuestosTrasladados:0.0, total:0.0, categoria:null, emisor:null, receptor:null,
+        calleExpedicion:"",numeroExteriorExpedicion:"", numeroInteriorExpedicion:"",coloniaExpedicion:"", delegacionOMunicipioExpedicion:"",
+        estadoExpedicion:null, paisExpedicion:null, codigoPostalExpedicion:"")**/
+        
+        redirect controller:"contabilidad", action:"listarGastos"
+    }
 }

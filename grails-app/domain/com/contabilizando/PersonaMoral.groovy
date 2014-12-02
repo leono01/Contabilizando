@@ -9,4 +9,7 @@ class PersonaMoral extends Persona{
         denominacionSocial  blank:false, nullable:true
         nombreComercial  blank:false, nullable:true
     }
+    String toString(){
+        "${denominacionSocial}"
+    }
 }

@@ -60,47 +60,52 @@ class BootStrap {
                 new ConfiguracionEmpresa(nombreDeEmpresa:"NUUPTECH S.A. de C.V.",domicilio:"Calle Cerezos 943",
                                          email:"nuuptech1@gmail.com", estado:null, telefono:null
                                         ).save()
+                                        
                 new Pais(nombre:"México").save()
                 new Estado(nombre:"Estado de México", pais : Pais.get(1)).save()//1
-            /**new Estado(nombre:"Aguascalientes", pais : Pais.get(1)).save()
-            new Estado(nombre:"Baja California", pais : Pais.get(1)).save()
-            new Estado(nombre:"Baja California Sur", pais : Pais.get(1)).save()
-            new Estado(nombre:"Campeche", pais : Pais.get(1)).save()//5
-            new Estado(nombre:"Chiapas", pais : Pais.get(1)).save()
-            new Estado(nombre:"Chihuahua", pais : Pais.get(1)).save()
-            new Estado(nombre:"Coahuila", pais : Pais.get(1)).save()
-            new Estado(nombre:"Colima", pais : Pais.get(1)).save()
-            new Estado(nombre:"Distrito Federal", pais : Pais.get(1)).save()//10
-            new Estado(nombre:"Durango", pais : Pais.get(1)).save()
-            new Estado(nombre:"Guanajuato", pais : Pais.get(1)).save()
-            new Estado(nombre:"Guerrero", pais : Pais.get(1)).save()
-            new Estado(nombre:"Hidalgo", pais : Pais.get(1)).save()
-            new Estado(nombre:"Jalisco", pais : Pais.get(1)).save()//15
-            new Estado(nombre:"Michoacán", pais : Pais.get(1)).save()
-            new Estado(nombre:"Morelos", pais : Pais.get(1)).save()
-            new Estado(nombre:"Nayarit", pais : Pais.get(1)).save()
-            new Estado(nombre:"Nuevo León", pais : Pais.get(1)).save()
-            new Estado(nombre:"Oaxaca", pais : Pais.get(1)).save()//20
-            new Estado(nombre:"Puebla", pais : Pais.get(1)).save()
-            new Estado(nombre:"Querétaro", pais : Pais.get(1)).save()
-            new Estado(nombre:"Quintana Roo", pais : Pais.get(1)).save()
-            new Estado(nombre:"San Luis Potosí", pais : Pais.get(1)).save()
-            new Estado(nombre:"Sinaloa", pais : Pais.get(1)).save()//25
-            new Estado(nombre:"Sonora", pais : Pais.get(1)).save()
-            new Estado(nombre:"Tabasco", pais : Pais.get(1)).save()
-            new Estado(nombre:"Tamaulipas", pais : Pais.get(1)).save()
-            new Estado(nombre:"Tlaxcala", pais : Pais.get(1)).save()
-            new Estado(nombre:"Veracruz", pais : Pais.get(1)).save()//30
-            new Estado(nombre:"Yucatán", pais : Pais.get(1)).save()            
-            new Estado(nombre:"Zacatecas", pais : Pais.get(1)).save()**/
-            
-            municipioService.altaMunicipios()
-            /**expedienteService.altaMunicipios2()
-            expedienteService.altaMunicipios3()
-            expedienteService.altaMunicipios4()
-            expedienteService.altaMunicipios5()
-            expedienteService.altaMunicipios6()**/
-                /**break
+                new Estado(nombre:"Aguascalientes", pais : Pais.get(1)).save()
+                new Estado(nombre:"Baja California", pais : Pais.get(1)).save()
+                new Estado(nombre:"Baja California Sur", pais : Pais.get(1)).save()
+                new Estado(nombre:"Campeche", pais : Pais.get(1)).save()//5
+                new Estado(nombre:"Chiapas", pais : Pais.get(1)).save()
+                new Estado(nombre:"Chihuahua", pais : Pais.get(1)).save()
+                new Estado(nombre:"Coahuila", pais : Pais.get(1)).save()
+                new Estado(nombre:"Colima", pais : Pais.get(1)).save()
+                new Estado(nombre:"Distrito Federal", pais : Pais.get(1)).save()//10
+                new Estado(nombre:"Durango", pais : Pais.get(1)).save()
+                new Estado(nombre:"Guanajuato", pais : Pais.get(1)).save()
+                new Estado(nombre:"Guerrero", pais : Pais.get(1)).save()
+                new Estado(nombre:"Hidalgo", pais : Pais.get(1)).save()
+                new Estado(nombre:"Jalisco", pais : Pais.get(1)).save()//15
+                new Estado(nombre:"Michoacán", pais : Pais.get(1)).save()
+                new Estado(nombre:"Morelos", pais : Pais.get(1)).save()
+                new Estado(nombre:"Nayarit", pais : Pais.get(1)).save()
+                new Estado(nombre:"Nuevo León", pais : Pais.get(1)).save()
+                new Estado(nombre:"Oaxaca", pais : Pais.get(1)).save()//20
+                new Estado(nombre:"Puebla", pais : Pais.get(1)).save()
+                new Estado(nombre:"Querétaro", pais : Pais.get(1)).save()
+                new Estado(nombre:"Quintana Roo", pais : Pais.get(1)).save()
+                new Estado(nombre:"San Luis Potosí", pais : Pais.get(1)).save()
+                new Estado(nombre:"Sinaloa", pais : Pais.get(1)).save()//25
+                new Estado(nombre:"Sonora", pais : Pais.get(1)).save()
+                new Estado(nombre:"Tabasco", pais : Pais.get(1)).save()
+                new Estado(nombre:"Tamaulipas", pais : Pais.get(1)).save()
+                new Estado(nombre:"Tlaxcala", pais : Pais.get(1)).save()
+                new Estado(nombre:"Veracruz", pais : Pais.get(1)).save()//30
+                new Estado(nombre:"Yucatán", pais : Pais.get(1)).save()            
+                new Estado(nombre:"Zacatecas", pais : Pais.get(1)).save()
+
+                municipioService.altaMunicipios()
+                municipioService.altaMunicipios2()
+                municipioService.altaMunicipios3()
+                municipioService.altaMunicipios4()
+                municipioService.altaMunicipios5()
+                municipioService.altaMunicipios6()
+                
+                new RegimenFiscal(nombreRegimenFiscal:"Régimen de Servicios Profesionales.").save()
+                new ConceptoIngreso(nombreConceptoIngreso:"Servicio de Asesoría Estratégica",descripcionConceptoIngreso:"Servicio de Asesoría Estratégica").save()
+                new ConceptoGasto(nombreConceptoGasto:"Agua Potable",descripcionConceptoGasto:"Es deducible el pago de agua que se utilice en el lugar donde desempeñe sus labores profesionales.").save()
+                    /**break
         }**/
     }
     def destroy = {

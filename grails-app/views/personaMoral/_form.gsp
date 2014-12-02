@@ -115,7 +115,8 @@
 		<g:message code="personaMoral.regimenFiscal.label" default="Regimen Fiscal" />
 		
 	</label>
-	<g:textField name="regimenFiscal" value="${personaMoralInstance?.regimenFiscal}"/>
+	<%--<g:textField name="regimenFiscal" value="${personaMoralInstance?.regimenFiscal}"/>--%>
+        <g:select id="regimenFiscal" name="regimenFiscal.id" from="${com.contabilizando.catalogos.RegimenFiscal.list()}" optionKey="id" value="${regimenFisicalInstance?.id}" class="many-to-one" noSelection="['null': '']"/>
 
 </div>
 

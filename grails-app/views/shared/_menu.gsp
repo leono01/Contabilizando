@@ -5,6 +5,8 @@
     </ul>
 </div>
 
+<sec:ifLoggedIn>
+
 <div class="sidebar-wrapper">
     <nav id="mainnav">
         <ul class="nav nav-list">
@@ -18,13 +20,21 @@
         </ul>
         <ul class="nav nav-list">
             <li>
-                <g:link controller="persona" action="listado">
+                <g:link controller="persona" action="index">
                     <span class="icon"><i class="icon20 i-coins"></i></span>
-                    <span class="txt">Contribuyentes</span>
+                    <span class="txt">Proveedores</span>
+                </g:link>
+            </li>
+        </ul>        
+        <ul class="nav nav-list">
+            <li>
+                <g:link controller="contabilidad" action="index">
+                    <span class="icon"><i class="icon20 i-coins"></i></span>
+                    <span class="txt">Contabilidad</span>
                 </g:link>
             </li>
         </ul>
-        <ul class="nav nav-list">
+        <%--<ul class="nav nav-list">
             <li>
                 <g:link controller="movimiento" action="subirArchivoXML">
                     <span class="icon"><i class="icon20 i-coins"></i></span>
@@ -39,7 +49,7 @@
                     <span class="txt">Salida</span>
                 </a>
             </li>
-        </ul>
+        </ul>--%>
         <ul class="nav nav-list">
             <li>               
                 <g:link controller="configuracionEmpresa" action="show" id="1">
@@ -50,3 +60,4 @@
         </ul>
     </nav> <!-- End #mainnav -->
 </div> <!-- End .sidebar-wrapper  -->
+</sec:ifLoggedIn>

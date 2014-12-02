@@ -101,4 +101,31 @@ class PersonaFisicaController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    
+    @Transactional
+    def guardar(PersonaFisica personaFisicaInstance) {
+        if (personaFisicaInstance == null) {
+            notFound()
+            return
+        }
+
+        if (personaFisicaInstance.hasErrors()) {
+            respond personaFisicaInstance.errors, view:'create'
+            return
+        }
+
+        personaFisicaInstance.save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'personaFisica.label', default: 'PersonaFisica'), personaFisicaInstance.id])
+                //redirect personaFisicaInstance
+                redirect controller:"persona", action:"index"
+            }
+            '*' { respond personaFisicaInstance, [status: CREATED] }
+        }
+        
+        
+        
+    }
 }

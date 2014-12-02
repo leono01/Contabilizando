@@ -102,8 +102,4 @@ class PersonaController {
         }
     }
     
-    def listado(){
-        
-    }
-    
 }

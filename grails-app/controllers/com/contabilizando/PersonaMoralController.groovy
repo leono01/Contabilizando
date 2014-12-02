@@ -101,4 +101,31 @@ class PersonaMoralController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    
+    @Transactional
+    def guardar(PersonaMoral personaMoralInstance) {
+        if (personaMoralInstance == null) {
+            notFound()
+            return
+        }
+
+        if (personaMoralInstance.hasErrors()) {
+            respond personaMoralInstance.errors, view:'create'
+            return
+        }
+
+        personaMoralInstance.save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'personaMoral.label', default: 'PersonaMoral'), personaMoralInstance.id])
+                //redirect personaMoralInstance
+                redirect controller:"persona", action:"index"
+            }
+            '*' { respond personaMoralInstance, [status: CREATED] }
+        }
+        
+        //redirect controller:"persona", action:"index"
+        
+    }
 }

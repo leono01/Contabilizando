@@ -18,7 +18,8 @@ class Movimiento implements Serializable{
     BigDecimal  totalImpuestosTrasladados
     BigDecimal  total
     
-    TipoDeOperacion tipoDeOperacion
+    Categoria       categoria
+    //TipoDeOperacion tipoDeOperacion
     Persona         emisor
     Persona         receptor
     
@@ -50,7 +51,7 @@ class Movimiento implements Serializable{
         totalImpuestosTrasladados           min:0.0, nullable:true
         total                               min:0.0, nullable:true
         
-        tipoDeOperacion                     nullable:true
+        categoria                           nullable:true
         emisor                              nullable:true
         receptor                            nullable:true
         
@@ -69,6 +70,7 @@ class Movimiento implements Serializable{
     
     static mapping = {
         conceptos       cascade: 'all-delete-orphan'
-        impuestos       cascade: 'all-delete-orphan'        
+        impuestos       cascade: 'all-delete-orphan'    
+        id generator : 'increment'
     }
 }
