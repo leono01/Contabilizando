@@ -45,7 +45,7 @@
                                     <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">					
                                         <!--<td><g:link action="show" id="${gasto.id}">${fieldValue(bean: movimientoInstance, field: "serie")}</g:link></td>-->
 					<td><g:formatDate date="${gasto.fechaDeCertificacion}"/></td>                                        
-					<td>${gasto.receptor.rfc}</td>
+					<td>${gasto.emisor.rfc}</td>
                                         <!--<td>${fieldValue(bean: gasto, field: "conceptos")}</td>-->
 					<td>${fieldValue(bean: gasto, field: "folio")}</td>					
 					<td>${fieldValue(bean: gasto, field: "total")}</td>					

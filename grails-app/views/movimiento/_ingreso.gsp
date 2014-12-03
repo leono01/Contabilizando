@@ -88,7 +88,7 @@
             <div class="well">
                 <div class="col-lg-6">
                     <div class="page-header">
-                        <h3>Receptor</h3>                            
+                        <h3>Cliente</h3>                            
                     </div>
                     <!--<g:render template="receptor"/>-->
                     <g:select id="cliente" name="cliente" from="${com.contabilizando.Persona.list()}" optionKey="id" required="" value="${movimientoInstance?.receptor?.id}" class="many-to-one"/>
